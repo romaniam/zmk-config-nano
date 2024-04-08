@@ -21,6 +21,7 @@
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
+            global-quick-tap;
             bindings = <&kp>, <&kp>;
           };
           slt: spacebar_layer_tap {
@@ -78,7 +79,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
    &kp LCTRL &hml LGUI A &hml LALT S &hml LCTRL D &kp F &kp G   &kp H &kp J &hmr LCTRL K  &hmr LALT L &hmr LGUI SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LALT
-                &kp TAB &slt 1 SPACE &kp RET   &slt 2 ESC &kp LSHFT &kp BSPC
+                &tp 2 ESC &kp SPACE &kp RET   &kp 1 &kp LSHFT &kp BSPC
                         >;
                 };
 
