@@ -33,7 +33,7 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
           };
-          slt: spacebar_layer_tap {
+          elt: escape_layer_tap {
                 compatible = "zmk,behavior-hold-tap";
                 label = "LAYER_TAP";
                 #binding-cells = <2>;
@@ -42,6 +42,17 @@
                 quick-tap-ms = <125>;
                 global-quick-tap;
                 bindings = <&mo>, <&kp>;
+          };
+          slt: spacebar_layer_tap {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                flavor = "balanced";
+                tapping-term-ms = <200>;
+                quick-tap-ms = <125>;                // repeat on tap-into-hold
+                require-prior-idle-ms = <100>;
+                bindings = <&mo>, <&kp>;
+                hold-trigger-key-positions = <KEYS_R KEYS_L>;
+                hold-trigger-on-release;             // delay positional check until key-release
           };
           bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -95,7 +106,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
    &kp LCTRL &hml LGUI A &hml LALT S &hml LCTRL D &kp F &kp G   &kp H &kp J &hmr LCTRL K  &hmr LALT L &hmr LGUI SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LA(BSPC)
-                &kp TAB &tp 1 SPACE &kp RET   &slt 2 ESC &kp LSHFT &kp BSPC
+                &kp TAB &slt 1 SPACE &kp RET   &elt 2 ESC &kp LSHFT &kp BSPC
                         >;
                 };
 
